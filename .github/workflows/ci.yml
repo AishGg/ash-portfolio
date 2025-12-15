@@ -1,0 +1,66 @@
+# ============================================
+# CI Pipeline - Next.js Portfolio
+# ============================================
+# Runs linting, type checking, build, and Docker build tests
+# ============================================
+
+name: CI Pipeline
+
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: [main, staging]
+
+jobs:
+  # ==========================================
+  # LINT AND BUILD
+  # ==========================================
+  test-node:
+    name: Lint and Build (Next.js)
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Build Next.js application
+        run: npm run build
+
+  # ==========================================
+  # DOCKER BUILD TEST
+  # ==========================================
+  # Verifies Dockerfile builds successfully
+  # ==========================================
+  build-docker:
+    name: Docker Build Test
+    runs-on: ubuntu-latest
+    needs: [test-node]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: ${{ github.repository }}:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
