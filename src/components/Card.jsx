@@ -63,7 +63,7 @@ export function Card(props) {
           <CardItem
             translateZ={20}
             as="a"
-            href={props.live || props.Live}
+            href={props.live}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-black dark:bg-white text-white dark:text-black text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-200"

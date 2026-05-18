@@ -10,28 +10,28 @@ export const Projects = () => {
             des: "This is web3 Yeild aggregator, crypto investing with real traders, diversified strategies",
             img: "/images/investPro.png",
             github: "https://github.com/subodh-thallada/EasyAConsensusHackathon2025",
-            Live: "https://easy-a-consensus-hackathon2025.vercel.app/"
+            live:"https://easy-a-consensus-hackathon2025.vercel.app/"
         },
         {
             title: "DNAArt",
             des: "A web application which generates the images based on the DNA Sequence",
             img: "/images/DNA.png",
             github: "https://github.com/AishGg/DnaArt",
-            Live: "https://devpost.com/software/dna-art"
+            live:"https://devpost.com/software/dna-art"
         },
         {
             title: "Social Connect",
             des: "ScocialConnect a platform that enables users to connect, share posts, like, comment, and follow other users",
             img: "/images/social.webp",
             github: "https://github.com/AishGg/mern-app",
-            Live: "https://github.com/AishGg/mern-app"
+            live:"https://github.com/AishGg/mern-app"
         },
         {
             title: "Currency Converter",
             des: "A React-based Currency Converter that convert between currencies using live exchange rates from an external API",
             img: "/images/currency.png",
             github: "https://github.com/AishGg/Currency-Converter",
-            Live: "https://github.com/AishGg/Currency-Converter"
+            live:"https://github.com/AishGg/Currency-Converter"
         }
     ]
   return (
@@ -43,7 +43,7 @@ export const Projects = () => {
                 des= {project.des}
                 img= {project.img}
                 github= {project.github}
-                Live= {project.Live}
+                live={project.live}
             />
         ))}
     </div>

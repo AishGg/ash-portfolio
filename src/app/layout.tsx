@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import {Navbar}  from "@/components/Navbar";
+import { Navbar } from "@/components/Navbar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
-const inter = Inter({weight: ["400","500","600","700","800","900"],
-  preload: false,
-}
-);
+const inter = Inter({ weight: ["400", "500", "600", "700", "800", "900"] });
 
 
 
@@ -21,14 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} antialiased flex flex-col min-h-screen`}
-      >
-        <Navbar/>
-        <main className="flex-grow">
-          {children}
-        </main>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased flex flex-col min-h-screen`}>
+        <ThemeProvider>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

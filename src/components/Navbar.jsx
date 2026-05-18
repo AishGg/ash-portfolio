@@ -3,9 +3,16 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'motion/react'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
+import { IconSun, IconMoon } from '@tabler/icons-react'
 
 export const Navbar = () => {
   const pathname = usePathname()
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => { setMounted(true) }, [])
   
   const navItems = [
     {
@@ -15,6 +22,10 @@ export const Navbar = () => {
     {
       title: "Projects",
       href: "/projects"
+    },
+    {
+      title: "Blogs",
+      href: "/blogs"
     },
     {
       title: "Contact",
@@ -43,7 +54,7 @@ export const Navbar = () => {
       </motion.div>
       
       <div className='flex items-center space-x-1 md:space-x-2'>
-        {navItems.map((item, idx)=>(
+        {navItems.map((item, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: -20 }}
@@ -76,6 +87,18 @@ export const Navbar = () => {
             </Link>
           </motion.div>
         ))}
+
+        {mounted && (
+          <motion.button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="ml-2 p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/60 transition-all duration-200"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <IconSun size={18} /> : <IconMoon size={18} />}
+          </motion.button>
+        )}
       </div>
     </motion.nav>
   )
