@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const inter = Inter({ weight: ["400", "500", "600", "700", "800", "900"] });
+const inter = Inter({ weight: ["400", "500", "600", "700", "800", "900"], subsets: ["latin"] });
 
 
 
