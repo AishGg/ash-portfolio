@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 export function Home() {
   return (
     <div className="mx-auto flex w-full flex-col items-center justify-center">
-      <div className="px-2 py-4">
+      <div className="px-2 py-24">
         <h1 className="relative z-10 mx-auto max-w-4xl text-center space-x-2 text-2xl font-bold text-slate-700 md:text-3xl lg:text-5xl dark:text-slate-300">
           {"I'm Ashish Garg"
             .split(" ")
