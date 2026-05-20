@@ -6,6 +6,13 @@ import {Card} from './Card.jsx'
 export const Projects = () => {
     const projects = [
         {
+            title: "DOG Vision",
+            des: "An end-to-end Dog Breed Classification Model trained Using Tensorflow",
+            img: "/images/dog.png",
+            github: "https://colab.research.google.com/drive/1lkQPzqYX14J7RzqK85oQXwCiddE_dzRg?usp=sharing  ",
+            live:"https://colab.research.google.com/drive/1lkQPzqYX14J7RzqK85oQXwCiddE_dzRg?usp=sharing"
+        },
+        {
             title: "Invest Pro",
             des: "This is web3 Yeild aggregator, crypto investing with real traders, diversified strategies",
             img: "/images/investPro.png",
