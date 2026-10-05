@@ -6,6 +6,13 @@ import {Card} from './Card.jsx'
 export const Projects = () => {
     const projects = [
         {
+            title: "GuardianGO",
+            des: "A React Native app streamlining school dismissal with real-time pickup tracking, role-based access, Firebase authentication, and notifications",
+            img: "/images/gg.jpeg",
+            github: "https://github.com/guardian-go/GuardianGo-react-native",
+            live:"https://github.com/guardian-go/GuardianGo-react-native"
+        },
+        {
             title: "DOG Vision",
             des: "An end-to-end Dog Breed Classification Model trained Using Tensorflow",
             img: "/images/dog.png",

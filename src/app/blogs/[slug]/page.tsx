@@ -60,7 +60,7 @@ export default async function BlogPostPage({
           })}
         </p>
 
-        <article className="prose prose-gray dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-code:before:content-none prose-code:after:content-none prose-code:bg-gray-100 prose-code:dark:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-900 prose-pre:dark:bg-gray-950">
+        <article className="prose prose-gray dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-code:before:content-none prose-code:after:content-none prose-code:bg-gray-100 prose-code:dark:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-900 prose-pre:dark:bg-gray-950 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:rounded-none">
           <MDXRemote
             source={blog.content}
             options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
