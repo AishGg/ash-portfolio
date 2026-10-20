@@ -6,6 +6,13 @@ import {Card} from './Card.jsx'
 export const Projects = () => {
     const projects = [
         {
+            title: "OrderFlow",
+            des: "Production-style order fulfillment backend built with Java 21 and Spring Boot, featuring PostgreSQL, Flyway, Docker, validation, and clean API architecture",
+            img: "/images/OrderFlow.png",
+            github: "https://github.com/AishGg/orderflow",
+            live:"https://github.com/AishGg/orderflow"
+        },
+        {
             title: "GuardianGO",
             des: "A React Native app streamlining school dismissal with real-time pickup tracking, role-based access, Firebase authentication, and notifications",
             img: "/images/gg.jpeg",
